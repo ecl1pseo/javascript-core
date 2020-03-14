@@ -36,10 +36,12 @@
 // arr.shift();
 // console.log(arr);
 
-// //Task 4
-// let cities = ["Rome", "Lviv", "Warsaw"];
-// cities = [cities[0] + "*" + cities[1] + "*" + cities[2]];
-// console.log(cities);
+//Task 4
+let cities = ["Rome", "Lviv", "Warsaw"];
+let res = cities.reduce(function (sum, i) {
+  return sum + "*" + i;
+})
+console.log(res);
 
 // //Task 5
 // let isAdult = Number(prompt("What is your age?"));
@@ -91,37 +93,18 @@ currentHour = date.getHours();
 //   alert("Good evening");
 // }
 
-switch (currentHour) {
-  case 23:
-  case 24:
-  case 1:
-  case 2:
-  case 3:
-  case 4:
-  case 5:
+switch (true) {
+  case (currentHour >= 23 && currentHour <= 5):
     alert("Good night!");
     break;
-  case 6:
-  case 7:
-  case 8:
-  case 9:
-  case 10:
-  case 11:
+  case (currentHour > 5 && currentHour <= 11):
     alert("Good morning!");
     break;
-  case 12:
-  case 13:
-  case 14:
-  case 15:
-  case 16:
-  case 17:
+  case (currentHour > 11 && currentHour <= 17):
     alert("Good day!");
     break;
-  case 18:
-  case 19:
-  case 20:
-  case 21:
-  case 22:
+  case (currentHour > 17 && currentHour < 23):
     alert("Good evening!");
+    console.log("okk");
     break;
 }
