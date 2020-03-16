@@ -38,8 +38,9 @@
 
 //Task 4
 let cities = ["Rome", "Lviv", "Warsaw"];
-let res = cities.reduce(function (sum, i) {
-  return sum + "*" + i;
+let res = [];
+res = cities.reduce(function (sum, i) {
+  return [sum + "*" + i];
 })
 console.log(res);
 
