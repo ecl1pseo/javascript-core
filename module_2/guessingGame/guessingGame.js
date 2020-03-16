@@ -12,6 +12,9 @@ endGame();
 
 //main-block; user decides whether continue a game
 function main() {
+    if (!startGame) {
+        alert("You didn't become a millionaire!!!");
+    }
     while (startGame) {
         let winRound = playGame(prizeСoefficient, rangeCoefficient);
         if (winRound) {
