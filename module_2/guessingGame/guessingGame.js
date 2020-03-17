@@ -5,13 +5,11 @@ let startGame = confirm("Do you want to play a game?");
 let totalPrize = 0;
 let prizeСoefficient = 1;
 let rangeCoefficient = 1;
-let possiblePrize = 10;
 
-main();
-endGame();
+decideToPlay();
 
-//main-block; user decides whether continue a game
-function main() {
+//decideToPlay-block; user decides whether continue a game
+function decideToPlay() {
     if (!startGame) {
         alert("You didn't become a millionaire!!!");
     }
@@ -19,21 +17,25 @@ function main() {
         let winRound = playGame(prizeСoefficient, rangeCoefficient);
         if (winRound) {
             totalPrize += winRound;
-            let wantToContinue = prompt("Do you want to play again?", "Yes");
+            let wantToContinue = confirm("Do you want to continue a game?");
             if (wantToContinue) {
                 prizeСoefficient *= 3;
                 rangeCoefficient *= 2;
             }
             else {
-                break;
+                endGame();
+                wantToContinue = confirm("Do you want to start new game?");
+                if (wantToContinue) {
+                    continue;
+                }
+                else {
+                    break;
+                }
             }
         }
         else {
-            startGame = confirm("Do you want to play again?", "Yes");
-            if (startGame) {
-                prizeСoefficient = 1;
-                rangeCoefficient = 1;
-            }
+            endGame();
+            startGame = confirm("Do you want to play again?");
         }
     }
 }
@@ -41,13 +43,14 @@ function main() {
 
 //Guessing game
 function playGame(prizeСoefficient, rangeCoefficient) {
+    let possiblePrize = 10;
     let min = 0 * rangeCoefficient;
     let max = 5 * rangeCoefficient;
     let randomNumber = generateNumber(min, max);
     let prizes = {
         2: possiblePrize * prizeСoefficient,
-        1: Math.floor(possiblePrize / 2) * prizeСoefficient,
-        0: Math.floor(possiblePrize / 4) * prizeСoefficient
+        1: Math.floor((possiblePrize / 2) * prizeСoefficient),
+        0: Math.floor((possiblePrize / 4) * prizeСoefficient)
     };
     let attempts = 3;
     while (attempts) {
@@ -75,6 +78,9 @@ function endGame() {
     else {
         console.log("Sorry, you didn't win anything");
     }
+    totalPrize = 0;
+    prizeСoefficient = 1;
+    rangeCoefficient = 1;
 }
 
 //generate random number between min and max
