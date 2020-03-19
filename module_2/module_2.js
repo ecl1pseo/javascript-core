@@ -80,7 +80,7 @@ console.log(res);
 
 //Task 7
 var date = new Date();
-currentHour = date.getHours();
+let currentHour = date.getHours();
 // if (currentHour >= 23 && currentHour <= 5) {
 //   alert("Good night!");
 // }
