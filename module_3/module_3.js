@@ -1,4 +1,4 @@
-// Task 1
+// // Task 1
 // let arr = [2, 3, 4, 5];
 // let res = 1;
 // for (i = 0; i < arr.length; i++) {
@@ -14,7 +14,7 @@
 // }
 // console.log(res);
 
-//Task 2
+// //Task 2
 // for (i = 0; i <= 15; i++) {
 //     if (i % 2 === 0 && i !== 0) {
 //         console.log(`${i} is even`);
@@ -25,7 +25,7 @@
 //     }
 // }
 
-//Task 3
+// //Task 3
 // function randArray(k) {
 //     let arr = [];
 //     let max = 500;
@@ -36,7 +36,7 @@
 //     console.log(arr);
 // }
 
-//Task 4
+// //Task 4
 // function raiseToDegree(a, b) {
 //     let c = parseInt(a);
 //     let d = parseInt(b);
@@ -55,7 +55,7 @@
 //     return min;
 // }
 
-//Task 6
+// //Task 6
 // function findUnique(arr) {
 //     for (i = 0; i < arr.length; i++) {
 //         let k = arr[i];
@@ -70,7 +70,7 @@
 //     return true;
 // }
 
-//Task 7
+// //Task 7
 // function lastElem(arr, amountOfElements) {
 //     let invers = arr.concat();
 //     invers.reverse();
@@ -83,7 +83,7 @@
 //     }
 // }
 
-//Task 8 
+// //Task 8 
 // function convertToUpper(str) {
 //     str = str.split(" ");
 //     for (i = 0; i < str.length; i++) {
