@@ -55,16 +55,6 @@ Worker.expirience = 1.5;
 let worker1 = new Worker("Raygar Targaryen", 75, 30);
 let worker2 = new Worker("Legolas", 50, 30);
 let worker3 = new Worker("Till Lindemann", 130, 30);
-
-workers.sort(function (a, b) {
-    return a.showSalaryWithExperience() - b.showSalaryWithExperience();
-});
-
-for (let worker of workers) {
-    console.log(`${worker.fullName}: ${worker.showSalaryWithExperience()}`);
-}
-
-//checking
 let worker4 = new Worker("John Johnson", 20, 23);
 console.log(worker4.fullName);
 worker4.showSalary();
@@ -75,6 +65,17 @@ console.log("New experience: " + worker4.expirience);
 worker4.showSalaryWithExperience();
 let worker5 = new Worker("Tom Tomson", 48, 22);
 console.log(worker5.workingDays);
+
+workers.sort(function (a, b) {
+    return a.showSalaryWithExperience() - b.showSalaryWithExperience();
+});
+
+for (let worker of workers) {
+    console.log(`${worker.fullName}: ${worker.showSalaryWithExperience()}`);
+}
+
+//checking
+
 
 
 // //Task 4
