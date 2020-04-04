@@ -1,14 +1,14 @@
 //**************************** Task 1 *****************************
-let openTab = window.open("", "", "width=300,height=300");
-setTimeout(() => {
-    openTab.resizeTo(500, 500);
-}, 2000);
-setTimeout(() => {
-    openTab.moveTo(200, 200);
-}, 4000);
-setTimeout(() => {
-    openTab.close();
-}, 6000);
+// let openTab = window.open("", "", "width=300,height=300");
+// setTimeout(() => {
+//     openTab.resizeTo(500, 500);
+// }, 2000);
+// setTimeout(() => {
+//     openTab.moveTo(200, 200);
+// }, 4000);
+// setTimeout(() => {
+//     openTab.close();
+// }, 6000);
 
 //**************************** Task 2 *****************************
 // function changeCSS() {
@@ -75,23 +75,31 @@ setTimeout(() => {
 // })
 
 //**************************** Task 7 *****************************
-// let countries = document.getElementById("countries");
-// let towns = document.getElementById("towns");
-// let city = document.getElementById("city");
-// countries.addEventListener("change", () => {
-//     city.textContent = "";
-//     let countryName = countries.options[countries.selectedIndex].className;
-//     for (i = 0; i < towns.length; i++) {
-//         if (countryName !== towns[i].className) {
-//             towns[i].style.display = "none";
-//         }
-//         else if (countryName === towns[i].className) {
-//             towns[i].style.display = "block";
-//         }
-//     }
-//     document.getElementById("country").textContent = countryName;
-// });
-// towns.addEventListener("change", () => {
-//     city.textContent = `, ${towns.options[towns.selectedIndex].textContent}`;
-// });
+const countries = document.getElementById("countries");
+const towns = document.getElementById("towns");
+let city = document.getElementById("city");
+
+countries.addEventListener("change", editSelect);
+window.addEventListener("load", editSelect);
+towns.addEventListener("change", () => {
+    city.textContent = `, ${towns.options[towns.selectedIndex].textContent}`;
+});
+
+function editSelect() {
+    const citiesOptions = Array.from(towns.children);
+    city.textContent = "";
+    let countryName = countries.options[countries.selectedIndex].className;
+    for (i = 0; i < citiesOptions.length; i++) {
+        if (countryName !== citiesOptions[i].className) {
+            citiesOptions[i].style.display = "none";
+        }
+        else {
+            citiesOptions[i].style.display = "block";
+            towns.value = citiesOptions[i].value;
+        }
+    }
+    document.getElementById("country").textContent = countryName;
+    city.textContent = `, ${towns.options[towns.selectedIndex].textContent}`
+}
+
 
