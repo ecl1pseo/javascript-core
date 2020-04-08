@@ -68,14 +68,14 @@ upperCase('JavaScript');
 
 //*****************************   Task 7 ********************************** */
 // function checkLogin(str) {
-//     let regExp = /^[^\d][a-z0-9\.]{0,8}[a-z0-9\.]$/;
+//     let regExp = /^[^\d][a-zA-Z0-9\.]{0,8}[a-zA-Z0-9\.]$/;
 //     let result = regExp.test(str);
 //     console.log(result);
 //     regExp = /\d+\.?\d*/g;
 //     result = str.match(regExp);
 //     console.log(`${result}`);
 // }
-// checkLogin('ee1.1ret3');
+// checkLogin('eE1.1ret3');
 // checkLogin('ee1*1ret3');
 // checkLogin('ee');
 // checkLogin('ee154*165ret3.5fgdfg');
