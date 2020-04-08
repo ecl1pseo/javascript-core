@@ -5,8 +5,9 @@
 // $('h2.head').css("background-color", "green").find('.inner').css("font-size", "35px");
 
 //****************        Task 3     ************* */
-// $('h3')[0].before($('h3').next('div')[0]);
-// $('h3')[1].before($('h3').next('div')[0]);
+// $('h3 + div').each(function () {
+//     $(this).after($(this).prev());
+// })
 
 //****************        Task 4     ************* */
 let count = 0;
