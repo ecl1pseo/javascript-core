@@ -17,6 +17,8 @@ upperCase('JavaScript');
 //     console.log(regexp1.test(str));
 // }
 // checkEmail("Qmail2@gmail.com");
+// checkEmail("Qmail2gmail.com");
+// checkEmail("Qmail2@gmailcom");
 
 //*****************************   Task 3 ********************************** */
 // let regExp = [/d[bB]+d/g, /(?<=d)[bB]+(?=d)/g, /(?<=d[bB]+)d/g];
@@ -75,3 +77,7 @@ upperCase('JavaScript');
 // }
 // checkLogin('ee1.1ret3');
 // checkLogin('ee1*1ret3');
+// checkLogin('ee');
+// checkLogin('ee154*165ret3.5fgdfg');
+
+
