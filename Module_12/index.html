@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ************************  Task 1 **********************************-->
+    <h1>Task 1</h1>
+    <button id="vote" onclick="acceptVote()">Vote!</button>
+
+    <!-- ************************  Task 2 **********************************-->
+    <h1>Task 2</h1>
+    <button id="books" onclick="getBooks()">Download books</button>
+    <script>
+        // ************************ Task 1 **********************************
+        function acceptVote() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'vote.txt', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+
+                if (xhr.status != 200) {
+                    alert('Error ' + xhr.status + ': ' + xhr.statusText);
+                } else {
+                    document.getElementById('vote').textContent = `${xhr.responseText} ${new Date()}`;
+                }
+            }
+            xhr.send();
+        }
+
+        // ************************  Task 2 **********************************
+        function getBooks() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'books.json', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+
+                if (xhr.status != 200) {
+                    alert('Error ' + xhr.status + ': ' + xhr.statusText);
+                } else {
+                    let books = JSON.parse(xhr.responseText);
+                    let authors = document.createElement('ul');
+                    for (i = 0; i < books.length; i++) {
+                        authors.innerHTML += `<li>${books[i]["author"]}</li>`;
+                    }
+                    document.getElementById('books').replaceWith(authors);
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
