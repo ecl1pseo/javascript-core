@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="assets/css/todos.css">
+    <link rel="stylesheet" href="assets/css/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="assets/js/lib/jquery-3.4.1.js"></script>
+    <script src="assets/css/lib/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1 class="display-1 font-italic">To-Do Lists</h1>
+    <div id="wrapper">
+        <div id="container-top" class="d-flex justify-content-between">
+            <div>
+                <select id="lists" class="rounded"></select>
+                <label for="lists">Your list</label>
+            </div>
+            <div>
+                <input placeholder="New To-Do List" type="text" autocomplete="off" id="new-todo" class="rounded">
+                <button class="rounded">Add To-Do</button>
+            </div>
+        </div>
+
+        <div id="container-bottom">
+            <h3></h3>
+            <input placeholder="New task" type="text" autocomplete="off" id="new-li">
+            <ul></ul>
+        </div>
+    </div>
+
+    <script src="assets/js/toDoList.js"></script>
+</body>
+
+</html>
